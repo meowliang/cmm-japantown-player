@@ -1,180 +1,3 @@
-// ***** PLAYLIST DATA ******** (hardcoded for now)
-
-const playlist = {
-  playlist_name: "Returning to the Harlem of the West",
-  tracks: [
-    {
-      chapter: 1,
-      title: "Return from Topaz",
-      audio_url: "https://cmm-cloud-2.s3.us-west-1.amazonaws.com/WALKING+TOURS/2025-03-15-JAPANTOWN/2025-03-15-JAPANTOWN-MP3-AUDIO/2025-03-15-JAPANTOWN-CH-1.mp3",
-      artwork_url: "https://cmm-cloud-2.s3.us-west-1.amazonaws.com/WALKING+TOURS/2025-03-15-JAPANTOWN/2025-03-15-JAPANTOWN-ART/2025-03-15-JAPANTOWN-CH1-ART.jpg",
-      playlist: "Returning to the Harlem of the West",
-      IsAR: false,
-      XR_Scene: "",
-      duration: "4:08:00"
-    },
-    {
-      chapter: 2,
-      title: "Unwelcome",
-      audio_url: "https://cmm-cloud-2.s3.us-west-1.amazonaws.com/WALKING+TOURS/2025-03-15-JAPANTOWN/2025-03-15-JAPANTOWN-MP3-AUDIO/2025-03-15-JAPANTOWN-CH-2.mp3",
-      artwork_url: "https://cmm-cloud-2.s3.us-west-1.amazonaws.com/WALKING+TOURS/2025-03-15-JAPANTOWN/2025-03-15-JAPANTOWN-ART/2025-03-15-JAPANTOWN-CH2-ART.jpg",
-      playlist: "Returning to the Harlem of the West",
-      IsAR: false,
-      XR_Scene: "",
-      duration: "1:44:00"
-    },
-    {
-      chapter: 3,
-      title: "410 Austin Street",
-      audio_url: "https://cmm-cloud-2.s3.us-west-1.amazonaws.com/WALKING+TOURS/2025-03-15-JAPANTOWN/2025-03-15-JAPANTOWN-MP3-AUDIO/2025-03-15-JAPANTOWN-CH-3.mp3",
-      artwork_url: "https://cmm-cloud-2.s3.us-west-1.amazonaws.com/WALKING+TOURS/2025-03-15-JAPANTOWN/2025-03-15-JAPANTOWN-ART/2025-03-15-JAPANTOWN-CH3-ART.jpg",
-      playlist: "Returning to the Harlem of the West",
-      IsAR: false,
-      XR_Scene: "",
-      duration: "1:25:00"
-    },
-    {
-      chapter: 4,
-      title: "Goofy Village",
-      audio_url: "https://cmm-cloud-2.s3.us-west-1.amazonaws.com/WALKING+TOURS/2025-03-15-JAPANTOWN/2025-03-15-JAPANTOWN-MP3-AUDIO/2025-03-15-JAPANTOWN-CH-4.mp3",
-      artwork_url: "https://cmm-cloud-2.s3.us-west-1.amazonaws.com/WALKING+TOURS/2025-03-15-JAPANTOWN/2025-03-15-JAPANTOWN-ART/2025-03-15-JAPANTOWN-CH3b-ART.jpg",
-      playlist: "Returning to the Harlem of the West",
-      IsAR: true,
-      XR_Scene: "https://cmm-cloud-2.s3.us-west-1.amazonaws.com/WALKING+TOURS/2025-04-01-JAPANTOWN-XR/2025-03-15-JAPANTOWN-CH-4-LOW.mp4",
-      duration: "1:44:00"
-    },
-    {
-      chapter: 5,
-      title: "Life After War",
-      audio_url: "https://cmm-cloud-2.s3.us-west-1.amazonaws.com/WALKING+TOURS/2025-03-15-JAPANTOWN/2025-03-15-JAPANTOWN-MP3-AUDIO/2025-03-15-JAPANTOWN-CH-5.mp3",
-      artwork_url: "https://cmm-cloud-2.s3.us-west-1.amazonaws.com/WALKING+TOURS/2025-03-15-JAPANTOWN/2025-03-15-JAPANTOWN-ART/2025-03-15-JAPANTOWN-CH4-ART.jpg",
-      playlist: "Returning to the Harlem of the West",
-      IsAR: false,
-      XR_Scene: "",
-      duration: "3:39:00"
-    },
-    {
-      chapter: 6,
-      title: "Before the War",
-      audio_url: "https://cmm-cloud-2.s3.us-west-1.amazonaws.com/WALKING+TOURS/2025-03-15-JAPANTOWN/2025-03-15-JAPANTOWN-MP3-AUDIO/2025-03-15-JAPANTOWN-CH-6.mp3",
-      artwork_url: "https://cmm-cloud-2.s3.us-west-1.amazonaws.com/WALKING+TOURS/2025-03-15-JAPANTOWN/2025-03-15-JAPANTOWN-ART/2025-03-15-JAPANTOWN-CH5-ART.jpg",
-      playlist: "Returning to the Harlem of the West",
-      IsAR: false,
-      XR_Scene: "",
-      duration: "4:54:00"
-    },
-    {
-      chapter: 7,
-      title: "Waiting",
-      audio_url: "https://cmm-cloud-2.s3.us-west-1.amazonaws.com/WALKING+TOURS/2025-03-15-JAPANTOWN/2025-03-15-JAPANTOWN-MP3-AUDIO/2025-03-15-JAPANTOWN-CH-7.mp3",
-      artwork_url: "https://cmm-cloud-2.s3.us-west-1.amazonaws.com/WALKING+TOURS/2025-03-15-JAPANTOWN/2025-03-15-JAPANTOWN-ART/2025-03-15-JAPANTOWN-CH6-ART.jpg",
-      playlist: "Returning to the Harlem of the West",
-      IsAR: false,
-      XR_Scene: "",
-      duration: "1:39:00"
-    },
-    {
-      chapter: 8,
-      title: "Internment Arrives",
-      audio_url: "https://cmm-cloud-2.s3.us-west-1.amazonaws.com/WALKING+TOURS/2025-03-15-JAPANTOWN/2025-03-15-JAPANTOWN-MP3-AUDIO/2025-03-15-JAPANTOWN-CH-8.mp3",
-      artwork_url: "https://cmm-cloud-2.s3.us-west-1.amazonaws.com/WALKING+TOURS/2025-03-15-JAPANTOWN/2025-03-15-JAPANTOWN-ART/2025-03-15-JAPANTOWN-CH6b-ART.TIF",
-      playlist: "Returning to the Harlem of the West",
-      IsAR: true,
-      XR_Scene: "https://cmm-cloud-2.s3.us-west-1.amazonaws.com/WALKING+TOURS/2025-04-01-JAPANTOWN-XR/2025-03-15-JAPANTOWN-CH-8.mp4",
-      duration: "2:06:00"
-    },
-    {
-      chapter: 9,
-      title: "Maya's Journey",
-      audio_url: "https://cmm-cloud-2.s3.us-west-1.amazonaws.com/WALKING+TOURS/2025-03-15-JAPANTOWN/2025-03-15-JAPANTOWN-MP3-AUDIO/2025-03-15-JAPANTOWN-CH-9.mp3",
-      artwork_url: "https://cmm-cloud-2.s3.us-west-1.amazonaws.com/WALKING+TOURS/2025-03-15-JAPANTOWN/2025-03-15-JAPANTOWN-ART/2025-03-15-JAPANTOWN-CH7-ART.jpg",
-      playlist: "Returning to the Harlem of the West",
-      IsAR: false,
-      XR_Scene: "",
-      duration: "2:32:00"
-    },
-    {
-      chapter: 10,
-      title: "The Second Great Migration",
-      audio_url: "https://cmm-cloud-2.s3.us-west-1.amazonaws.com/WALKING+TOURS/2025-03-15-JAPANTOWN/2025-03-15-JAPANTOWN-MP3-AUDIO/2025-03-15-JAPANTOWN-CH-10.mp3",
-      artwork_url: "https://cmm-cloud-2.s3.us-west-1.amazonaws.com/WALKING+TOURS/2025-03-15-JAPANTOWN/2025-03-15-JAPANTOWN-ART/2025-03-15-JAPANTOWN-CH8-ART.png",
-      playlist: "Returning to the Harlem of the West",
-      IsAR: false,
-      XR_Scene: "",
-      duration: "3:54:00"
-    },
-    {
-      chapter: 11,
-      title: "An Uncertain Return",
-      audio_url: "https://cmm-cloud-2.s3.us-west-1.amazonaws.com/WALKING+TOURS/2025-03-15-JAPANTOWN/2025-03-15-JAPANTOWN-MP3-AUDIO/2025-03-15-JAPANTOWN-CH-11.mp3",
-      artwork_url: "https://cmm-cloud-2.s3.us-west-1.amazonaws.com/WALKING+TOURS/2025-03-15-JAPANTOWN/2025-03-15-JAPANTOWN-ART/2025-03-15-JAPANTOWN-CH9-ART.jpg",
-      playlist: "Returning to the Harlem of the West",
-      IsAR: false,
-      XR_Scene: "",
-      duration: "3:15:00"
-    },
-    {
-      chapter: 12,
-      title: "Hotel Kabuki",
-      audio_url: "https://cmm-cloud-2.s3.us-west-1.amazonaws.com/WALKING+TOURS/2025-03-15-JAPANTOWN/2025-03-15-JAPANTOWN-MP3-AUDIO/2025-03-15-JAPANTOWN-CH-12.mp3",
-      artwork_url: "",
-      playlist: "Returning to the Harlem of the West",
-      IsAR: false,
-      XR_Scene: "",
-      duration: "0:45:00"
-    },
-    {
-      chapter: 13,
-      title: "The King Café",
-      audio_url: "https://cmm-cloud-2.s3.us-west-1.amazonaws.com/WALKING+TOURS/2025-03-15-JAPANTOWN/2025-03-15-JAPANTOWN-MP3-AUDIO/2025-03-15-JAPANTOWN-CH-13.mp3",
-      artwork_url: "https://cmm-cloud-2.s3.us-west-1.amazonaws.com/WALKING+TOURS/2025-03-15-JAPANTOWN/2025-03-15-JAPANTOWN-ART/2025-03-15-JAPANTOWN-CH11-ART.gif",
-      playlist: "Returning to the Harlem of the West",
-      IsAR: true,
-      XR_Scene: "https://cmm-cloud-2.s3.us-west-1.amazonaws.com/WALKING+TOURS/2025-04-01-JAPANTOWN-XR/2025-04-01-JAPANTOWN-CH-13.mp4",
-      duration: "2:59:00"
-    },
-    {
-      chapter: 14,
-      title: "The Bulldozers Arrive",
-      audio_url: "https://cmm-cloud-2.s3.us-west-1.amazonaws.com/WALKING+TOURS/2025-03-15-JAPANTOWN/2025-03-15-JAPANTOWN-MP3-AUDIO/2025-03-15-JAPANTOWN-CH-14.mp3",
-      artwork_url: "https://cmm-cloud-2.s3.us-west-1.amazonaws.com/WALKING+TOURS/2025-03-15-JAPANTOWN/2025-03-15-JAPANTOWN-ART/2025-03-15-JAPANTOWN-CH12-ART.png",
-      playlist: "Returning to the Harlem of the West",
-      IsAR: false,
-      XR_Scene: "",
-      duration: "2:30:00"
-    },
-    {
-      chapter: 15,
-      title: "Possibilities Lost",
-      audio_url: "https://cmm-cloud-2.s3.us-west-1.amazonaws.com/WALKING+TOURS/2025-03-15-JAPANTOWN/2025-03-15-JAPANTOWN-MP3-AUDIO/2025-03-15-JAPANTOWN-CH-15.mp3",
-      artwork_url: "https://cmm-cloud-2.s3.us-west-1.amazonaws.com/WALKING+TOURS/2025-03-15-JAPANTOWN/2025-03-15-JAPANTOWN-ART/2025-03-15-JAPANTOWN-CH13-ART.png",
-      playlist: "Returning to the Harlem of the West",
-      IsAR: false,
-      XR_Scene: "",
-      duration: "1:21:00"
-    },
-    {
-      chapter: 16,
-      title: "Three Shades of Blue",
-      audio_url: "https://cmm-cloud-2.s3.us-west-1.amazonaws.com/WALKING+TOURS/2025-03-15-JAPANTOWN/2025-03-15-JAPANTOWN-MP3-AUDIO/2025-03-15-JAPANTOWN-CH-16.mp3",
-      artwork_url: "https://cmm-cloud-2.s3.us-west-1.amazonaws.com/WALKING+TOURS/2025-03-15-JAPANTOWN/2025-03-15-JAPANTOWN-ART/2025-03-15-JAPANTOWN-CH14-ART.jpg",
-      playlist: "Returning to the Harlem of the West",
-      IsAR: true,
-      XR_Scene: "https://cmm-cloud-2.s3.us-west-1.amazonaws.com/WALKING+TOURS/2025-04-01-JAPANTOWN-XR/2025-03-15-JAPANTOWN-CH-16.mp4",
-      duration: "2:13:00"
-    },
-    {
-      chapter: 17,
-      title: "Thank You",
-      audio_url: "https://cmm-cloud-2.s3.us-west-1.amazonaws.com/WALKING+TOURS/2025-03-15-JAPANTOWN/2025-03-15-JAPANTOWN-MP3-AUDIO/2025-03-15-JAPANTOWN-CH-17.mp3",
-      artwork_url: "https://cmm-cloud-2.s3.us-west-1.amazonaws.com/WALKING+TOURS/2025-03-15-JAPANTOWN/2025-03-15-JAPANTOWN-ART/2025-03-15-JAPANTOWN-CH12-ART.png",
-      playlist: "Returning to the Harlem of the West",
-      IsAR: false,
-      XR_Scene: "",
-      duration: "0:45:00"
-    }
-  ]
-};
 
 
 // State management
@@ -210,7 +33,6 @@ const elements = {
   sceneContainer: document.getElementById('sceneContainer'),
   playlistContainer: document.getElementById('playlistContainer'),
   playlistTracks: document.getElementById('playlistTracks'),
-  playlistClose: document.getElementById('playlistClose'),
   permissionOverlay: document.getElementById('permissionOverlay'),
   enableMotionBtn: document.getElementById('enableMotionBtn'),
   skipBtn: document.getElementById('skipMotionBtn'),
@@ -222,11 +44,16 @@ const elements = {
 
 };
 
+let playlist = null;
+
 
 // Initialize the player
 async function initializePlayer() {
       
   try {
+
+      await loadPlaylistData();
+
       setupEventListeners();
       populatePlaylist();
       setupAudioElement();
@@ -253,6 +80,35 @@ async function initializePlayer() {
       window.addEventListener('message', handleIframeMessages);
   } catch (error) {
       console.error('Error initializing player:', error);
+
+      elements.trackTitle.textContent = 'Error loading playlist';
+      elements.trackArtist.textContent = 'Please check your connection';
+  }
+}
+
+// NEW FUNCTION: Load playlist data from JSON file
+async function loadPlaylistData() {
+  try {
+    const response = await fetch('playlist.json'); // Path to your JSON file
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    playlist = await response.json();
+    
+    // Validate the loaded data
+    if (!playlist || !playlist.playlist_name || !Array.isArray(playlist.tracks)) {
+      throw new Error('Invalid playlist data format');
+    }
+    
+    console.log('Playlist data loaded successfully');
+  } catch (error) {
+    console.error('Failed to load playlist data:', error);
+    // Provide fallback empty playlist to prevent errors
+    playlist = {
+      playlist_name: "Playlist",
+      tracks: []
+    };
+    throw error; // Re-throw so initializePlayer can handle it
   }
 }
 
@@ -321,7 +177,7 @@ function setupEventListeners() {
   elements.exitXRBtn.addEventListener('click', exitXRMode);
 
   // Playlist
-  elements.playlistClose.addEventListener('click', togglePlaylist);
+  // elements.playlistClose.addEventListener('click', togglePlaylist);
 
   // Device orientation
   elements.enableMotionBtn.addEventListener('click', function() {
@@ -359,25 +215,6 @@ function setupEventListeners() {
       }
   });
 
-//     // Keyboard shortcuts
-// document.addEventListener('keydown', (e) => {
-//     if (e.code === 'Space') {
-//         e.preventDefault();
-//         togglePlayPause();
-//     } else if (e.code === 'ArrowRight') {
-//         playNextTrack();
-//     } else if (e.code === 'ArrowLeft') {
-//         playPreviousTrack();
-//     } else if (e.code === 'KeyM') {
-//         toggleMute();
-//     } else if (e.code === 'BracketRight') {
-//         elements.audioElement.currentTime += 5;
-//     } else if (e.code === 'BracketLeft') {
-//         elements.audioElement.currentTime -= 5;
-//     } else if (e.code === 'KeyS') {
-//         togglePlaybackSpeed();
-//     }
-// });
 
 }
 
@@ -712,17 +549,6 @@ function setupXRScene(videoUrl) {
   
 }
 
-                  //   // iOS requires direct user interaction to play video
-                  //   function handleFirstInteraction() {
-                  //     document.removeEventListener('touchstart', handleFirstInteraction);
-                  //     document.removeEventListener('click', handleFirstInteraction);
-                      
-                  //     video.play().catch(e => console.error('Video play error:', e));
-                  // }
-                  
-                  // document.addEventListener('touchstart', handleFirstInteraction, { once: true });
-                  // document.addEventListener('click', handleFirstInteraction, { once: true });
-
 function postMessageToIframe(message) {
   if (!state.iframeReady) {
     state.pendingMessages.push(message); // Queue messages
@@ -830,9 +656,6 @@ async function playPreviousTrack() {
       console.error('Error autoplaying previous track:', error);
   }
 
-  // if (state.isPlaying) {
-  //     elements.audioElement.play().catch(console.error);
-  // }
 }
 
 
@@ -999,18 +822,8 @@ async function loadTrack(index, shouldAutoplay = false) {
   elements.audioElement.src = track.audio_url;
   elements.albumArt.src = track.artwork_url;
   elements.trackTitle.textContent = `Chapter ${track.chapter}: ${track.title}`;
-  elements.trackArtist.textContent = `Returning to the Harlem of the West`;
+  elements.trackArtist.textContent = `Ni de Aquí, Ni de Allá`;
   elements.duration.textContent = track.duration || '0:00';
-
-  // elements.audioElement.playbackRate = 1;
-  // elements.speedBtn.textContent = '1x';
-
-      // // Update XR button visibility - only if not in XR mode
-      // if (!state.isXRMode) {
-      //     const showXRButton = track.IsAR && track.XR_Scene && track.XR_Scene.trim() !== "";
-      //     elements.viewXRBtn.style.display = showXRButton ? 'block' : 'none';
-      //     elements.exitXRBtn.style.display = 'none';
-      // }
 
 // Show View 360° button only if track has XR content AND we're not in XR mode
 const showXRButton = track.IsAR && track.XR_Scene && track.XR_Scene.trim() !== "";
@@ -1042,14 +855,7 @@ elements.exitXRBtn.style.display = state.isXRMode ? 'flex' : 'none';
   preloadAdjacentXRVideos(index).catch(console.error);
 
   updatePlayPauseButton();
-  // togglePlaylist();
 
-      // // Preload video metadata if XR is available
-      // if (track.IsAR && track.XR_Scene) {
-      //     const video = document.createElement('video');
-      //     video.src = track.XR_Scene;
-      //     video.load();
-      // }
 }
 
 function togglePlaylist() {
