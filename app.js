@@ -54,6 +54,14 @@ async function initializePlayer() {
 
       await loadPlaylistData();
 
+        // Initialize tour progress tracking
+window.dataLayer = window.dataLayer || [];
+window.dataLayer.push({
+  'event': 'tour_started',
+  'tour_name': 'Ni de Aquí, Ni de Allá',
+  'total_chapters': playlist.tracks.length
+});
+
       setupEventListeners();
       populatePlaylist();
       setupAudioElement();
@@ -221,6 +229,17 @@ function setupEventListeners() {
 // Audio element setup
 function setupAudioElement() {
   elements.audioElement.addEventListener('ended', () => {
+    const currentChapter = playlist.tracks[state.currentTrack].chapter;
+    const totalChapters = playlist.tracks.length;
+    
+    if (currentChapter === totalChapters) {
+      window.dataLayer.push({
+        'event': 'tour_completed',
+        'last_chapter': currentChapter,
+        'tour_duration': calculateTotalTourDuration() // Implement this function
+      });
+    }
+
       state.isPlaying = false;
       updatePlayPauseButton();
       // Play next track in audio mode
@@ -231,6 +250,24 @@ function setupAudioElement() {
       elements.duration.textContent = formatTime(elements.audioElement.duration);
   });
 }
+
+function calculateTotalTourDuration() {
+  let totalSeconds = 0;
+  playlist.tracks.forEach(track => {
+    const [mins, secs] = track.duration.split(':').map(Number);
+    totalSeconds += (mins * 60) + secs;
+  });
+  return formatDuration(totalSeconds);
+}
+
+function formatDuration(totalSeconds) {
+  const hours = Math.floor(totalSeconds / 3600);
+  const minutes = Math.floor((totalSeconds % 3600) / 60);
+  const seconds = totalSeconds % 60;
+  return `${hours}h ${minutes}m ${seconds}s`;
+}
+
+
 
 
 
@@ -574,11 +611,11 @@ function togglePlayPause() {
   updatePlayPauseButton();
 
     // Track play/pause events
-    window.dataLayer.push({
-      'event': state.isPlaying ? 'audio_play' : 'audio_pause',
-      'track_title': playlist.tracks[state.currentTrack].title,
-      'track_chapter': playlist.tracks[state.currentTrack].chapter
-    });
+    // window.dataLayer.push({
+    //   'event': state.isPlaying ? 'audio_play' : 'audio_pause',
+    //   'track_title': playlist.tracks[state.currentTrack].title,
+    //   'track_chapter': playlist.tracks[state.currentTrack].chapter
+    // });
   
   if (state.isPlaying) {
       elements.audioElement.play().catch(console.error);
@@ -770,7 +807,6 @@ function updateProgress() {
       const progressPercent = (currentTime / duration) * 100;
       elements.progress.style.width = `${progressPercent}%`;
       elements.currentTime.textContent = formatTime(currentTime);
-  }
 
     // Track progress milestones
     if (progressPercent >= 25 && progressPercent < 26) {
@@ -797,6 +833,7 @@ function updateProgress() {
         'track_title': playlist.tracks[state.currentTrack].title
       });
     }
+  }
   
   // Sync video time if in XR mode
   if (state.isXRMode) {
@@ -848,14 +885,39 @@ function populatePlaylist() {
 
 async function loadTrack(index, shouldAutoplay = false) {
 
-    // Track when user changes tracks
-    if (typeof state.currentTrack !== 'undefined') {
-      window.dataLayer.push({
-        'event': 'track_change',
-        'from_track': playlist.tracks[state.currentTrack].title,
-        'to_track': playlist.tracks[index].title
-      });
-    }
+  const newChapter = playlist.tracks[index].chapter;
+  const totalChapters = playlist.tracks.length;
+  
+  // Calculate overall progress
+  const tourProgress = Math.round((newChapter / totalChapters) * 100);
+  
+  // Track chapter change
+  window.dataLayer.push({
+    'event': 'chapter_started',
+    'chapter_number': newChapter,
+    'chapter_title': playlist.tracks[index].title,
+    'tour_progress_percent': tourProgress
+  });
+
+  // Track milestone completions
+  if (tourProgress >= 25 && tourProgress < 26) {
+    window.dataLayer.push({
+      'event': 'tour_25percent',
+      'current_chapter': newChapter
+    });
+  }
+  if (tourProgress >= 50 && tourProgress < 51) {
+    window.dataLayer.push({
+      'event': 'tour_50percent',
+      'current_chapter': newChapter
+    });
+  }
+  if (tourProgress >= 75 && tourProgress < 76) {
+    window.dataLayer.push({
+      'event': 'tour_75percent',
+      'current_chapter': newChapter
+    });
+  }
   
   const track = playlist.tracks[index];
   if (!track) return; // Safety check
