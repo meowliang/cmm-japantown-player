@@ -124,12 +124,22 @@
     {
       "chapter": 13,
       "title": "The King Café",
-      "audio_url": "https://cmm-cloud-2.s3.us-west-1.amazonaws.com/WALKING+TOURS/2025-03-15-JAPANTOWN/2025-03-15-JAPANTOWN-MP3-AUDIO/2025-03-15-JAPANTOWN-CH-13.mp3",
+      "audio_url": "https://cmm-cloud-2.s3.us-west-1.amazonaws.com/WALKING+TOURS/2025-03-15-JAPANTOWN/2025-03-15-JAPANTOWN-MP3-AUDIO/2025-04-21-JAPANTOWN-SHORTER-AUDIO/Chapter+13+The+King+Cafe%CC%81.mp3",
       "artwork_url": "https://cmm-cloud-2.s3.us-west-1.amazonaws.com/WALKING+TOURS/2025-03-15-JAPANTOWN/2025-03-15-JAPANTOWN-ART/2025-03-15-JAPANTOWN-CH11-ART.gif",
       "playlist": "Returning to the Harlem of the West",
       "IsAR": true,
-      "XR_Scene": "https://cmm-cloud-2.s3.us-west-1.amazonaws.com/WALKING+TOURS/2025-04-01-JAPANTOWN-XR/2025-04-01-JAPANTOWN-CH-13.mp4",
-      "duration": "2:59:00"
+      "XR_Scene": "https://cmm-cloud-2.s3.us-west-1.amazonaws.com/WALKING+TOURS/2025-04-10-JAPANTOWN-XR/2025-04-21-JAPANTOWN-XR-SHORTER/2025-04-21-JAPANTOWN-XR-13A-low.mp4",
+      "duration": "1:00:00"
+    },
+    {
+      "chapter": 13.5,
+      "title": "Harry",
+      "audio_url": "https://cmm-cloud-2.s3.us-west-1.amazonaws.com/WALKING+TOURS/2025-03-15-JAPANTOWN/2025-03-15-JAPANTOWN-MP3-AUDIO/2025-04-21-JAPANTOWN-SHORTER-AUDIO/Chapter+13b+Harry.mp3",
+      "artwork_url": "https://cmm-cloud-2.s3.us-west-1.amazonaws.com/WALKING+TOURS/2025-03-15-JAPANTOWN/2025-03-15-JAPANTOWN-ART/2025-03-15-JAPANTOWN-CH11-ART.gif",
+      "playlist": "Returning to the Harlem of the West",
+      "IsAR": false,
+      "XR_Scene": "",
+      "duration": "1:59:00"
     },
     {
       "chapter": 14,
