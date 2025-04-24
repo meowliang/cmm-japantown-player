@@ -412,6 +412,14 @@ async function enterXRMode() {
 
 async function exitXRMode() {
   if (!state.isXRMode) return;
+
+      // Track exit 360° button click
+      window.dataLayer.push({
+        'event': 'exit_360_clicked',
+        'track_title': currentTrack.title,
+        'track_chapter': currentTrack.chapter
+      });
+    
   
   console.log('Exiting XR mode');
   state.isXRMode = false;
