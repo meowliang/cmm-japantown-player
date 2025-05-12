@@ -356,6 +356,7 @@ async function preloadAdjacentXRVideos(currentIndex) {
 
 async function enterXRMode() {
   const currentTrack = playlist.tracks[state.currentTrack];
+  const videoUrl = currentTrack.XR_Scene;
 
     // Track 360° button click
     window.dataLayer.push({
@@ -370,12 +371,19 @@ async function enterXRMode() {
       return;
   }
 
-  // Show loading state
-  elements.xrContent.innerHTML = '<div class="xr-loading">Loading 360° experience...</div>';
-  
+   // Show loading state
+   const loadingOverlay = document.createElement('div');
+   loadingOverlay.className = 'xr-loading-overlay';
+   loadingOverlay.innerHTML = `
+     <div class="xr-loading-message">Loading 360° experience...</div>
+     <div class="xr-loading-spinner"></div>
+   `;
+   document.body.appendChild(loadingOverlay);
+
   try {
           // Update state FIRST
           state.isXRMode = true;
+          state.exitingXR = false;
 
                 // Setup UI
       elements.audioContent.style.display = 'none';
@@ -390,7 +398,20 @@ async function enterXRMode() {
       // Store playback state
       const wasPlaying = !elements.audioElement.paused;      
 
-      
+    //       // Setup XR scene with callback when loaded
+    // setupXRScene(videoUrl, () => {
+    //   // When scene is loaded, remove loading overlay
+    //   loadingOverlay.style.opacity = '0';
+    //   setTimeout(() => {
+    //     document.body.removeChild(loadingOverlay);
+    //   }, 500);
+
+    //   // Sync with audio player
+    //   postMessageToIframe({
+    //     action: 'setTime',
+    //     time: elements.audioElement.currentTime
+    //   });
+
       // Setup scene
       setupXRScene(currentTrack.XR_Scene);
       
@@ -488,7 +509,7 @@ function completeExitXRMode(videoTime) {
 }
 
 
-function setupXRScene(videoUrl) {
+function setupXRScene(videoUrl, callback) {
   // Clear previous iframe
   elements.xrContent.innerHTML = '';
   
@@ -497,6 +518,18 @@ function setupXRScene(videoUrl) {
   iframe.className = 'video-frame';
   iframe.allowFullscreen = true;
   elements.xrContent.appendChild(iframe);
+
+    // Add CSS to hide A-Frame UI elements
+    const hideUI = `
+    <style>
+      .a-loader-title, .a-enter-vr-button, .a-loader {
+        display: none !important;
+      }
+      body {
+        background-color: #000 !important;
+      }
+    </style>
+  `;
   
   // Set up load handler
   iframe.onload = () => {
@@ -512,10 +545,14 @@ function setupXRScene(videoUrl) {
       <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
           <title>360 Video</title>
           <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
-          <style>body { margin: 0; overflow: hidden; }</style>
+          ${hideUI}
+          <style>
+            body { margin: 0; overflow: hidden; }
+                  .a-canvas { background: #000 !important; }</style>
       </head>
       <body>
           <a-scene device-orientation-permission-ui
+                    loading-screen="enabled: false"
                     vr-mode-ui="enabled: false"> 
               <a-assets>
                   <video id="xrVideo"
@@ -549,15 +586,8 @@ function setupXRScene(videoUrl) {
                   const video = document.getElementById('xrVideo');
         video.muted = true; // Ensure muted
 
-<<<<<<< HEAD
-                          // Force play when metadata is loaded
-        video.addEventListener('loadedmetadata', function() {
-          video.play().catch(e => console.log('Play error:', e));
-        });
-=======
 
                   
->>>>>>> parent of 7eae91d (updated loading screen)
                   
                   // Notify parent when ready
                   function notifyReady() {
