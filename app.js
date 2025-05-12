@@ -1143,7 +1143,7 @@ function requestDeviceOrientation() {
     elements.permissionOverlay.style.display = 'none';
   }
 }
-
+ 
 function showPermissionFeedback(message) {
   // Remove any existing feedback first
   const existingFeedback = document.querySelector('.permission-feedback');
